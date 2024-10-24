@@ -1,5 +1,5 @@
 import { Schema, model } from "mongoose";
-import { TUser } from "./auth.interface";
+import { IUserModel, TUser } from "./auth.interface";
 import bcryptjs from "bcryptjs";
 import config from "../../config";
 
@@ -41,4 +41,17 @@ authSchema.post("save", function (doc, next) {
   next();
 });
 
-export const Auth = model<TUser>("Auth", authSchema);
+// checking if the user is already exist in the data base
+authSchema.statics.isUserExistsByEmail = async function (email: string) {
+  return await Auth.findOne({ email }).select("+password");
+};
+
+// checking if the given password is matched with the correct password
+authSchema.statics.isPasswordMatched = async function (
+  plainTextPassword,
+  hashedPassword,
+) {
+  return await bcryptjs.compare(plainTextPassword, hashedPassword);
+};
+
+export const Auth = model<TUser, IUserModel>("Auth", authSchema);
