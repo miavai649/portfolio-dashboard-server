@@ -1,27 +1,27 @@
-import { model, Schema } from 'mongoose'
-import { TProject } from './projects.interface'
+import { model, Schema } from "mongoose";
+import { TProject } from "./projects.interface";
 
 const projectSchema = new Schema<TProject>(
   {
     title: {
       type: String,
       required: true,
-      trim: true
+      trim: true,
     },
     description: {
       type: String,
-      required: true
+      required: true,
     },
     technologies: {
       type: [String],
-      required: true
+      required: true,
     },
     images: {
       type: [String],
-      default: []
-    }
+      default: [],
+    },
   },
-  { timestamps: true }
-)
+  { timestamps: true },
+);
 
-export const Projects = model<TProject>('Projects', projectSchema)
+export const Projects = model<TProject>("Projects", projectSchema);
