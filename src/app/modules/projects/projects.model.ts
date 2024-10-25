@@ -15,6 +15,10 @@ const projectSchema = new Schema<TProject>(
     technologies: {
       type: [String],
       required: true
+    },
+    images: {
+      type: [String],
+      default: []
     }
   },
   { timestamps: true }
