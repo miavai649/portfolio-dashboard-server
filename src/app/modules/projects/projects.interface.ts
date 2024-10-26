@@ -1,6 +1,12 @@
-export type TProject = {
+export interface TProject {
   title: string;
-  description: string;
+  shortDescription: string;
+  longDescription: string;
+  thumbnail: string;
   technologies: string[];
-  images: string[];
-};
+  features: string[];
+  githubLink: string;
+  liveLink: string;
+  startDate: string;
+  endDate: string;
+}

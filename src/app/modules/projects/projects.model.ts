@@ -8,7 +8,16 @@ const projectSchema = new Schema<TProject>(
       required: true,
       trim: true,
     },
-    description: {
+    shortDescription: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    longDescription: {
+      type: String,
+      required: true,
+    },
+    thumbnail: {
       type: String,
       required: true,
     },
@@ -16,9 +25,25 @@ const projectSchema = new Schema<TProject>(
       type: [String],
       required: true,
     },
-    images: {
+    features: {
       type: [String],
-      default: [],
+      required: true,
+    },
+    githubLink: {
+      type: String,
+      required: true,
+    },
+    liveLink: {
+      type: String,
+      required: true,
+    },
+    startDate: {
+      type: String,
+      required: true,
+    },
+    endDate: {
+      type: String,
+      required: true,
     },
   },
   { timestamps: true },

@@ -7,9 +7,10 @@ const router = express.Router();
 
 router.post(
   "/create-project",
-  multerUpload.fields([{ name: "projectImages" }]),
+  multerUpload.single("thumbnail"),
   bodyDataParsing,
   ProjectControllers.createProject,
 );
+router.get("/get-all", ProjectControllers.getAllProjects);
 
 export const ProjectsRoutes = router;
