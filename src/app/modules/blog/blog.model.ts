@@ -3,11 +3,6 @@ import { TBlog } from "./blog.interface";
 
 const blogSchema = new Schema<TBlog>(
   {
-    id: {
-      type: Number,
-      required: true,
-      unique: true,
-    },
     title: {
       type: String,
       required: true,
@@ -17,10 +12,6 @@ const blogSchema = new Schema<TBlog>(
       type: String,
       required: true,
       trim: true,
-    },
-    date: {
-      type: String,
-      required: true,
     },
     tags: {
       type: [String],

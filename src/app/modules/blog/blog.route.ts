@@ -9,5 +9,6 @@ router.post(
   bodyDataParsing,
   BlogControllers.createBlog,
 );
+router.get("/get-all", BlogControllers.getAllBlogs);
 
 export const BlogRoutes = router;

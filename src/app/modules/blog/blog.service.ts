@@ -11,6 +11,12 @@ const createBlogIntoDb = async (payload: TBlog, image: TImageFile) => {
   return post;
 };
 
+const getAllBlogsFromDb = async () => {
+  const result = await Blog.find();
+  return result;
+};
+
 export const BlogServices = {
   createBlogIntoDb,
+  getAllBlogsFromDb,
 };
