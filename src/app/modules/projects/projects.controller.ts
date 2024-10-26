@@ -29,7 +29,20 @@ const getAllProjects = catchAsync(async (req, res) => {
   });
 });
 
+const getProjectById = catchAsync(async (req, res) => {
+  const projectId = req.params.id;
+  const post = await ProjectServices.getProjectByFromDB(projectId);
+
+  sendResponse(res, {
+    success: true,
+    statusCode: httpStatus.OK,
+    message: "Project retrieved successfully",
+    data: post,
+  });
+});
+
 export const ProjectControllers = {
   createProject,
   getAllProjects,
+  getProjectById,
 };
