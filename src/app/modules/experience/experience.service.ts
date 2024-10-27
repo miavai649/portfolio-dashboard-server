@@ -7,6 +7,18 @@ const createExperienceIntoDb = async (payload: TExperience) => {
   return user;
 };
 
+const getAllExperienceFromDb = async () => {
+  const result = await Experience.find();
+  return result;
+};
+
+const getExperienceByFromDB = async (projectId: string) => {
+  const result = await Experience.findById(projectId);
+  return result;
+};
+
 export const ExperienceServices = {
   createExperienceIntoDb,
+  getAllExperienceFromDb,
+  getExperienceByFromDB,
 };
