@@ -12,7 +12,7 @@ const createProjectIntoDb = async (payload: TProject, image: TImageFile) => {
 };
 
 const getAllProjectFromDb = async () => {
-  const result = await Projects.find();
+  const result = await Projects.find().sort("-createdAt");
   return result;
 };
 

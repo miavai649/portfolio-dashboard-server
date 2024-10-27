@@ -12,7 +12,7 @@ const createSkillIntoDb = async (payload: TSkill, image: TImageFile) => {
 };
 
 const getAllSkillFromDb = async () => {
-  const result = await Skill.find();
+  const result = await Skill.find().sort("-createdAt");
   return result;
 };
 

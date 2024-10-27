@@ -12,7 +12,7 @@ const createBlogIntoDb = async (payload: TBlog, image: TImageFile) => {
 };
 
 const getAllBlogsFromDb = async () => {
-  const result = await Blog.find();
+  const result = await Blog.find().sort("-createdAt");
   return result;
 };
 const getBlogByFromDB = async (blogId: string) => {
