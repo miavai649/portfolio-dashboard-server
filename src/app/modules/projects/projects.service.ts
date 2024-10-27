@@ -1,4 +1,4 @@
-import { TImageFile, TImageFiles } from "../../interfaces/file.interface";
+import { TImageFile } from "../../interfaces/file.interface";
 import { TProject } from "./projects.interface";
 import { Projects } from "./projects.model";
 
