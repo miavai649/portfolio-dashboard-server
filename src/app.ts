@@ -10,7 +10,10 @@ const app: Application = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: [
+      "http://localhost:3000",
+      "https://noor-portfolio-brown.vercel.app/",
+    ],
     credentials: true,
   }),
 );
