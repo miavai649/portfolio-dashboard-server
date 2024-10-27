@@ -1,8 +1,8 @@
 export type TBlog = {
-  title: string
-  author: string
-  description: string
-  tags: string[]
-  coverImage: string
-  mainContent: string
-}
+  title: string;
+  author: string;
+  description: string;
+  tags: string[];
+  coverImage: string;
+  mainContent: string;
+};
